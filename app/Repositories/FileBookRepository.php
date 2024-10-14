@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/AbstractBookRepository.php';
 
-class FileBookRepository extends AbstractBookRepository
+class FileBookRepository implements BookRepositoryInterface
 {
     private string $filePath;
 
