@@ -12,11 +12,11 @@ require_once __DIR__ . '/../app/Config/Config.php';
 
 
 $config = new Config();
-$bookRepoPath = $config->get('BOOK_REPOSITORY_PATH');
-$bookTypeRepoPath = $config->get('BOOK_TYPE_REPOSITORY_PATH');
+// $bookRepoPath = $config->get('BOOK_REPOSITORY_PATH');
+// $bookTypeRepoPath = $config->get('BOOK_TYPE_REPOSITORY_PATH');
 
-$bookRepo = new FileBookRepository($bookRepoPath);
-$bookTypeRepo = new FileBookTypeRepository($bookTypeRepoPath);
+$bookRepo = new FileBookRepository($config);
+$bookTypeRepo = new FileBookTypeRepository($config);
 
 $bookController = new BookController($bookRepo,$bookTypeRepo);
 

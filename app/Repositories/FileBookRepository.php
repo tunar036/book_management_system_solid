@@ -5,9 +5,9 @@ class FileBookRepository implements BookRepositoryInterface
 {
     private string $filePath;
 
-    public function __construct(string $filePath)
+    public function __construct(Config $config)
     {
-        $this->filePath = $filePath;
+        $this->filePath = $config->get('BOOK_REPOSITORY_PATH', __DIR__ . '/../../data/books.json');
     }
 
     public function all(): array
