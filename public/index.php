@@ -8,9 +8,12 @@ require_once __DIR__ . '/../app/Repositories/FileBookTypeRepository.php';
 
 require_once __DIR__ . '/../app/Repositories/FileBookRepository.php';
 require_once __DIR__ . '/../app/Controllers/BookController.php';
+require_once __DIR__ . '/../app/Config/Config.php';
 
-$bookRepoPath = __DIR__.'/../data/books.json';
-$bookTypeRepoPath = __DIR__.'/../data/book_types.json';
+
+$config = new Config();
+$bookRepoPath = $config->get('BOOK_REPOSITORY_PATH');
+$bookTypeRepoPath = $config->get('BOOK_TYPE_REPOSITORY_PATH');
 
 $bookRepo = new FileBookRepository($bookRepoPath);
 $bookTypeRepo = new FileBookTypeRepository($bookTypeRepoPath);
