@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "title": "test book",
+        "author": "test author",
+        "type": "test book type",
+        "type_id": 1
+    }
+]
